@@ -1,6 +1,7 @@
 import time
 import pyo
 import configparser
+import flanger
 
 def start_pyo_server():
     """Start the Pyo server
@@ -69,17 +70,17 @@ for effect in effects_dict.keys():
                             )
 #    This will be used once the class is created
 #
-#    elif effect == 'flanger':
-#        #harmonizer stuff
-#        print("Enable flanger effect")
-#        enabled_effects.append(pyo.Flanger(
-#                                enabled_effects[len(enabled_effects)-1],
-#                                depth=float(params['depth']),
-#                                lfofreq=float(params['lfofreq']),
-#				feedback=float(params['feedback']),
-#                                mul=1,
-#                                add=0)
-#                            )
+    elif effect == 'flanger':
+        #harmonizer stuff
+        print("Enable flanger effect")
+        enabled_effects.append(flanger.Flanger(
+                                enabled_effects[len(enabled_effects)-1],
+                                depth=float(params['depth']),
+                                lfofreq=float(params['lfofreq']),
+				feedback=float(params['feedback']),
+                                mul=1,
+                                add=0)
+                            )
     elif effect == 'freqshift':
         #frequency shift stuff
         print("Enable frequency shift effect")

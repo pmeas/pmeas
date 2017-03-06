@@ -1,17 +1,11 @@
 {
-	"chorus": {
-		"depth": 1,
-		"feedback": 0.5,
-		"balance": 1
-	},
-	"delay": {
-		"delay": 1,
+	"flanger": {
+		"depth": 0.75,
+		"lfofreq": 0.2,
 		"feedback": 0.5
 	},
-	"reverb": {
-		"revtime": 1,
-		"cutoff": 5000,
-		"balance": 1,
-		"roomsize": 4
+	"distortion": {
+		"drive": 0.95,
+		"slope": 0.2
 	}
 }
