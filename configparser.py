@@ -1,11 +1,13 @@
 import json
 
+PATH = "config/effects.txt"
+
 def read_config_file():
     """
     Reads the configuration file stored in config/
     Returns string being read.
     """
-    config_file = open("config/effects.txt")
+    config_file = open(PATH)
     config_data = config_file.read()
     config_file.close()
     return config_data
