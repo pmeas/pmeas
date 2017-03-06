@@ -68,8 +68,6 @@ for effect in effects_dict.keys():
                                 mul=1,
                                 add=0)
                             )
-#    This will be used once the class is created
-#
     elif effect == 'flanger':
         #harmonizer stuff
         print("Enable flanger effect")

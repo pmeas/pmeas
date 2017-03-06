@@ -164,11 +164,4 @@ class Flanger(PyoObject):
     @feedback.setter
     def feedback(self, x):
         self.setFeedback(x)
-
-# Run the script to test the Flanger object.
-if __name__ == "__main__":
-    s = Server(audio='jack', nchnls=1).boot()
-    src = BrownNoise([.2,.2]).out()
-    fl = Flanger(src, depth=.9, lfofreq=.1, feedback=.5, mul=.5).out()
-    s.gui(locals())
-    
+   
