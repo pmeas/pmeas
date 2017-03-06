@@ -1,5 +1,17 @@
 {
-	"harmonizer": {
-		"balance": 4
+	"chorus": {
+		"depth": 1,
+		"feedback": 0.5,
+		"balance": 1
+	},
+	"delay": {
+		"delay": 1,
+		"feedback": 0.5
+	},
+	"reverb": {
+		"revtime": 1,
+		"cutoff": 5000,
+		"balance": 1,
+		"roomsize": 4
 	}
 }
