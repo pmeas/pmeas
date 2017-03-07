@@ -1,7 +1,7 @@
 import time
 import pyo
 import configparser
-
+import jackserver
 
 def start_pyo_server():
     """Start the Pyo server
@@ -9,6 +9,7 @@ def start_pyo_server():
     Return the pyo instance of the server
     """
     pyo_server = pyo.Server(audio='jack', nchnls=1).boot()
+    #pyo_server.setJackAuto( False, False )
     pyo_server.start()
     return pyo_server
 
@@ -116,12 +117,16 @@ def apply_effects( effects_list ):
 
 def main():
 
+    #jackserver.start_jack_server(2, 1)
+
     pyo_server = start_pyo_server()
+    pyo_server.setJackAuto()
 
     # Read input from the audio device on channel 1
     enabled_effects = chain_effects(pyo.Input(chnl=0), configparser.get_effects())
 
     apply_effects( enabled_effects )
+
 
     # Eliminate need for GUI with loop - eventually to be used for updating effects.
     # Will be the location of the socket that will establish connection with GUI
@@ -130,7 +135,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import os
-    print(os.getcwd())
-    print(os.path.dirname(os.path.abspath(__file__)))
     main()
