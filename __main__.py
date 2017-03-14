@@ -16,23 +16,28 @@ def start_pyo_server():
 
 
 def chain_effects( initial_source, config_effects_dict ):
-
+    main_volume = 0.5 #default volume 
     enabled_effects = [initial_source]
-    #main_volume = 1
     for effect in config_effects_dict.keys():
 
         source = enabled_effects[len(enabled_effects) - 1]
 
         # print("Effect: " + effect + ", Params: " + str(effects_dict[effect]))
         params = config_effects_dict[effect]
-        if effect == 'distortion':
+        if effect == 'volume':
+            # volume stuff
+            print("Volume captured")
+            main_volume=float(params['vol'])
+            #)
+
+	elif effect == 'distortion':
             # distortion stuff
             print("Enable distortion effect")
             enabled_effects.append(pyo.Disto(
                 source,
                 drive=float(params['drive']),
                 slope=float(params['slope']),
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
@@ -44,7 +49,7 @@ def chain_effects( initial_source, config_effects_dict ):
                 delay=[0, float(params['delay'])],
                 feedback=float(params['feedback']),
                 maxdelay=10,
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
@@ -58,7 +63,7 @@ def chain_effects( initial_source, config_effects_dict ):
                 cutoff=float(params['cutoff']),
                 bal=float(params['balance']),
                 roomSize=float(params['roomsize']),
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
@@ -70,7 +75,7 @@ def chain_effects( initial_source, config_effects_dict ):
                 depth=float(params['depth']),
                 feedback=float(params['feedback']),
                 bal=float(params['balance']),
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
@@ -82,7 +87,7 @@ def chain_effects( initial_source, config_effects_dict ):
                 depth=float(params['depth']),
                 freq=float(params['freq']),
                 feedback=float(params['feedback']),
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
@@ -92,7 +97,7 @@ def chain_effects( initial_source, config_effects_dict ):
             enabled_effects.append(pyo.FreqShift(
                 source,
                 shift=params['shift'],
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
@@ -104,7 +109,7 @@ def chain_effects( initial_source, config_effects_dict ):
                 transpo=params['transpose'],
                 feedback=float(params['feedback']),
                 winsize=0.1,
-                mul=1,
+                mul=main_volume,
                 add=0)
             )
 
