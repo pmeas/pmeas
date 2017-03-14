@@ -28,7 +28,6 @@ def chain_effects( initial_source, config_effects_dict ):
             # volume stuff
             print("Volume captured")
             main_volume=float(params['vol'])
-            #)
 
 	elif effect == 'distortion':
             # distortion stuff
