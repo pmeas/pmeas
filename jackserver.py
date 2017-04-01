@@ -11,9 +11,16 @@ def start_jack_server(hw_in_port='0', hw_out_port='0'):
 
     Called ONLY when no existing JACK server is running on the machine.
     """
-    cmd = '/usr/local/bin/jackd -P 70 -d alsa -r 48000 -p 512 -n 4 -D -C hw:{0} -P hw:{1} &'.format(hw_in_port, hw_out_port)
-    process = subprocess.call(cmd, shell=True)
+    #cmd = 'jackd -P 70 -d alsa -r 48000 -p 512 -n 4 -D -C hw:{0} -P hw:{1} &'.format(hw_in_port, hw_out_port)
+    cmd = ['jackd', '-P', '70', '-d', 'alsa', '-r', '48000', '-p', '512', '-n', '4', '-D', '-C', 'hw:'+hw_in_port, '-P', 'hw:'+hw_out_port, '&']
+    process = subprocess.Popen(cmd, shell=False)
+    proc_id = process.pid
+    print("ID OF JACK (supposedly): " + str(proc_id))
+    return proc_id
 
+def stop_jack_server(jack_id):
+    cmd = ['kill', '-s', '9', str(jack_id)]
+    process = subprocess.Popen(cmd, shell=False)
 
 def get_input_devices():
     """List the input devices captured by the ALSA interface"""
