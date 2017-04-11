@@ -36,6 +36,6 @@ Through the help of Python, we are able to support all Linux based distrbutions,
 4. Run `python .` in your terminal.
 
 ## Common Issues
-* JACK may fail to restart because of a low buffer size.
+* [Application crash](https://github.com/pmeas/pmeas-backend/issues/64)
 
 ## Systemd Integration
