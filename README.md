@@ -1,4 +1,4 @@
-# Portable Multi-Effects Audio Software - Backend
+# Portable Multi-Effects Audio Software - *Backend*
 
 ## Description
 The goal of this project was to create a multi-effects pedal, which can be used by a guitar, but any instrument, including microphone, will also work as well.
