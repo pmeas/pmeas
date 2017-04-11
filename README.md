@@ -34,3 +34,8 @@ Through the help of Python, we are able to support all Linux based distrbutions,
 2. Open up your favorite terminal.
 3. Change to the project directory, by called `cd <REPOSITORY_NAME>`; replacing `REPOSITORY_NAME` with the name of your downloaded folder.
 4. Run `python .` in your terminal.
+
+## Common Issues
+* JACK may fail to restart because of a low buffer size.
+
+## Systemd Integration
