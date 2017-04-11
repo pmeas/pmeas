@@ -30,4 +30,7 @@ Through the help of Python, we are able to support all Linux based distrbutions,
   * Any GPIO Button
 
 ## Usage
-
+1. Once all of the **Necessary Dependencies** have been installed, download this repository.
+2. Open up your favorite terminal.
+3. Change to the project directory, by called `cd <REPOSITORY_NAME>`; replacing `REPOSITORY_NAME` with the name of your downloaded folder.
+4. Run `python .` in your terminal.
