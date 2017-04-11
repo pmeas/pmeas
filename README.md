@@ -28,7 +28,7 @@ Through the help of Python, we are able to support all Linux based distrbutions,
 ## Optional Dependencies
 * [Raspberry Pi with Wifi ]( https://www.raspberrypi.org/products/raspberry-pi-3-model-b/ )
   * [Raspbian Jesse](https://www.raspberrypi.org/downloads/raspbian/)
-  * Any GPIO Button
+  * Any GPIO Button, *( Used for multi-track looper )*
 
 ## Usage
 1. Once all of the **Necessary Dependencies** have been installed, download this repository.
