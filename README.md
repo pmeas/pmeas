@@ -40,3 +40,4 @@ Through the help of Python, we are able to support all Linux based distrbutions,
 * [Application crash](https://github.com/pmeas/pmeas-backend/issues/64)
 
 ## Systemd Integration
+For running this application on every system boot, you must register the `pmeas.sh` script with the systemd cronjob service.
